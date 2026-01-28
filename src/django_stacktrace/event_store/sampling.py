@@ -5,8 +5,8 @@ from django.core.cache import cache
 
 from django_stacktrace.settings import api_settings
 
-STACKTRACE_RATE_LIMIT = api_settings.STACKTRACE_RATE_LIMIT
-STACKTRACE_SAMPLE_RATE = api_settings.STACKTRACE_SAMPLE_RATE
+STACKTRACE_RATE_LIMIT = api_settings.RATE_LIMIT
+STACKTRACE_SAMPLE_RATE = api_settings.SAMPLE_RATE
 
 
 def is_within_rate_limit() -> bool:

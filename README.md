@@ -40,85 +40,85 @@ All settings live under a single `STACKTRACE` dictionary. Each key is optional.
 
 ```python
 STACKTRACE = {
-    "STACKTRACE_ENABLED": True,
-    "STACKTRACE_SAMPLE_RATE": 1.0,
-    "STACKTRACE_RATE_LIMIT": 0,
-    "STACKTRACE_CAPTURE_HEADERS": True,
-    "STACKTRACE_CAPTURE_BODY": False,
-    "STACKTRACE_MAX_PAYLOAD_BYTES": 64 * 1024,
-    "STACKTRACE_REDACT_FIELDS": ["password", "token"],
-    "STACKTRACE_REDACT_HEADERS": ["authorization", "cookie"],
-    "STACKTRACE_USER_FIELD": "username",
+    "ENABLED": True,
+    "SAMPLE_RATE": 1.0,
+    "RATE_LIMIT": 0,
+    "CAPTURE_HEADERS": True,
+    "CAPTURE_BODY": False,
+    "MAX_PAYLOAD_BYTES": 64 * 1024,
+    "REDACT_FIELDS": ["password", "token"],
+    "REDACT_HEADERS": ["authorization", "cookie"],
+    "USER_FIELD": "username",
 }
 ```
 
 Available keys:
 
-- `STACKTRACE_ENABLED` (default `True`)
-- `STACKTRACE_SAMPLE_RATE` (default `1.0`, 0-1 sampling probability)
-- `STACKTRACE_RATE_LIMIT` (default `0`, per-minute cap; `0` disables)
-- `STACKTRACE_CAPTURE_HEADERS` (default `True`)
-- `STACKTRACE_CAPTURE_BODY` (default `False`)
-- `STACKTRACE_MAX_PAYLOAD_BYTES` (default `65536`)
-- `STACKTRACE_REDACT_FIELDS` (request keys to mask)
-- `STACKTRACE_REDACT_HEADERS` (header keys to mask)
-- `STACKTRACE_USER_FIELD` (user attribute for display name)
+- `ENABLED` (default `True`)
+- `SAMPLE_RATE` (default `1.0`, 0-1 sampling probability)
+- `RATE_LIMIT` (default `0`, per-minute cap; `0` disables)
+- `CAPTURE_HEADERS` (default `True`)
+- `CAPTURE_BODY` (default `False`)
+- `MAX_PAYLOAD_BYTES` (default `65536`)
+- `REDACT_FIELDS` (request keys to mask)
+- `REDACT_HEADERS` (header keys to mask)
+- `USER_FIELD` (user attribute for display name)
 
 ## Settings reference
 
-`STACKTRACE_ENABLED`
+`ENABLED`
 
 - Type: `bool`
 - Purpose: Enable or disable crash capturing entirely.
-- Example: `"STACKTRACE_ENABLED": False`
+- Example: `"ENABLED": False`
 
-`STACKTRACE_SAMPLE_RATE`
+`SAMPLE_RATE`
 
 - Type: `float` between `0.0` and `1.0`
 - Purpose: Probabilistic sampling for high-volume apps.
-- Example: `"STACKTRACE_SAMPLE_RATE": 0.1`
+- Example: `"SAMPLE_RATE": 0.1`
 
-`STACKTRACE_RATE_LIMIT`
+`RATE_LIMIT`
 
 - Type: `int`
 - Purpose: Per-minute cap; `0` disables rate limiting.
-- Example: `"STACKTRACE_RATE_LIMIT": 120`
+- Example: `"RATE_LIMIT": 120`
 
-`STACKTRACE_CAPTURE_HEADERS`
+`CAPTURE_HEADERS`
 
 - Type: `bool`
 - Purpose: Include request headers in the captured event.
-- Example: `"STACKTRACE_CAPTURE_HEADERS": True`
+- Example: `"CAPTURE_HEADERS": True`
 
-`STACKTRACE_CAPTURE_BODY`
+`CAPTURE_BODY`
 
 - Type: `bool`
 - Purpose: Include request body in the captured event.
-- Example: `"STACKTRACE_CAPTURE_BODY": False`
+- Example: `"CAPTURE_BODY": False`
 
-`STACKTRACE_MAX_PAYLOAD_BYTES`
+`MAX_PAYLOAD_BYTES`
 
 - Type: `int`
 - Purpose: Max bytes kept from request body.
-- Example: `"STACKTRACE_MAX_PAYLOAD_BYTES": 65536`
+- Example: `"MAX_PAYLOAD_BYTES": 65536`
 
-`STACKTRACE_REDACT_FIELDS`
+`REDACT_FIELDS`
 
 - Type: `list[str]` or `set[str]`
 - Purpose: Request data keys to mask before storage.
-- Example: `"STACKTRACE_REDACT_FIELDS": ["password", "token"]`
+- Example: `"REDACT_FIELDS": ["password", "token"]`
 
-`STACKTRACE_REDACT_HEADERS`
+`REDACT_HEADERS`
 
 - Type: `list[str]` or `set[str]`
 - Purpose: Header keys to mask before storage.
-- Example: `"STACKTRACE_REDACT_HEADERS": ["authorization", "cookie"]`
+- Example: `"REDACT_HEADERS": ["authorization", "cookie"]`
 
-`STACKTRACE_USER_FIELD`
+`USER_FIELD`
 
 - Type: `str`
 - Purpose: User attribute used for display name in the event.
-- Example: `"STACKTRACE_USER_FIELD": "username"`
+- Example: `"USER_FIELD": "username"`
 
 ## Data model
 

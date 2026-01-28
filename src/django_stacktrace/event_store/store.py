@@ -15,7 +15,7 @@ from django_stacktrace.event_store.sampling import (
     should_sample_event,
 )
 
-STACKTRACE_ENABLED = api_settings.STACKTRACE_ENABLED
+STACKTRACE_ENABLED = api_settings.ENABLED
 STACKTRACE_ASYNC_HANDLER = None
 
 _thread_state = threading.local()

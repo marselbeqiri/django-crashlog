@@ -2,14 +2,14 @@ from django.conf import settings
 from django.core.signals import setting_changed
 
 DEFAULTS = {
-    "STACKTRACE_ENABLED": True,
-    "STACKTRACE_SAMPLE_RATE": 1.0,
-    "STACKTRACE_RATE_LIMIT": 0,
-    "STACKTRACE_CAPTURE_HEADERS": True,
-    "STACKTRACE_CAPTURE_BODY": False,
-    "STACKTRACE_MAX_PAYLOAD_BYTES": 64 * 1024,
+    "ENABLED": True,
+    "SAMPLE_RATE": 1.0,
+    "RATE_LIMIT": 0,
+    "CAPTURE_HEADERS": True,
+    "CAPTURE_BODY": False,
+    "MAX_PAYLOAD_BYTES": 64 * 1024,
     # Builder options
-    "STACKTRACE_REDACT_FIELDS": {
+    "REDACT_FIELDS": {
         "password",
         "passwd",
         "secret",
@@ -20,14 +20,14 @@ DEFAULTS = {
         "cookie",
         "session",
     },
-    "STACKTRACE_REDACT_HEADERS": {
+    "REDACT_HEADERS": {
         "authorization",
         "cookie",
         "set-cookie",
         "x-api-key",
         "x-csrf-token",
     },
-    "STACKTRACE_USER_FIELD": "username",
+    "USER_FIELD": "username",
 }
 USER_SETTINGS = getattr(settings, "STACKTRACE", None)
 

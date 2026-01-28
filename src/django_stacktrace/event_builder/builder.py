@@ -60,17 +60,17 @@ def build_crash_event(
         CrashEventData dictionary ready for storage
     """
     if redact_keys is None:
-        redact_keys = api_settings.STACKTRACE_REDACT_FIELDS
+        redact_keys = api_settings.REDACT_FIELDS
     if redact_headers is None:
-        redact_headers = api_settings.STACKTRACE_REDACT_HEADERS
+        redact_headers = api_settings.REDACT_HEADERS
     if capture_body is None:
-        capture_body = api_settings.STACKTRACE_CAPTURE_BODY
+        capture_body = api_settings.CAPTURE_BODY
     if capture_headers is None:
-        capture_headers = api_settings.STACKTRACE_CAPTURE_HEADERS
+        capture_headers = api_settings.CAPTURE_HEADERS
     if max_body_bytes is None:
-        max_body_bytes = api_settings.STACKTRACE_MAX_PAYLOAD_BYTES
+        max_body_bytes = api_settings.MAX_PAYLOAD_BYTES
     if user_field is None:
-        user_field = api_settings.STACKTRACE_USER_FIELD
+        user_field = api_settings.USER_FIELD
 
     raw_traceback = format_traceback(exc, exc_info)
 
