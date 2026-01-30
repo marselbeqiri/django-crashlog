@@ -1,5 +1,7 @@
 # Django Stacktrace
 
+[![Latest on Django Packages](https://img.shields.io/badge/PyPI-django--stacktrace--tags-8c3c26?label=PyPI&message=django-stacktrace-tags&color=8c3c26)](https://djangopackages.org/packages/p/django-stacktrace/)
+
 Install from PyPI:
 
 ```bash
@@ -14,11 +16,11 @@ for production-grade monitoring, Sentry is recommended.
 ## Quick start
 
 1. Add the app:
-   - `django_stacktrace` to `INSTALLED_APPS`
+    - `django_stacktrace` to `INSTALLED_APPS`
 2. Add middleware (signal fallback is disabled automatically when middleware is enabled):
-   - `django_stacktrace.middleware.StacktraceMiddleware` in `MIDDLEWARE`
+    - `django_stacktrace.middleware.StacktraceMiddleware` in `MIDDLEWARE`
 3. Apply migrations:
-   - `python manage.py migrate`
+    - `python manage.py migrate`
 4. Trigger a crash and inspect `Crash events` in the Django admin.
 
 ## Manual capture
