@@ -1,6 +1,6 @@
 [project]
 name = "django-stacktrace"
-version = "0.2.2"
+version = "0.2.3"
 description = "A reusable Django app that captures exceptions with request context and stores them in the database, similar to a lightweight Sentry"
 readme = "README.md"
 license = { text = "MIT" }
